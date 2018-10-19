@@ -1,0 +1,10 @@
+C:\Coding\Practice\Abstracts\bin\Debug\netcoreapp2.0\Abstracts.deps.json
+C:\Coding\Practice\Abstracts\bin\Debug\netcoreapp2.0\Abstracts.runtimeconfig.json
+C:\Coding\Practice\Abstracts\bin\Debug\netcoreapp2.0\Abstracts.runtimeconfig.dev.json
+C:\Coding\Practice\Abstracts\bin\Debug\netcoreapp2.0\Abstracts.dll
+C:\Coding\Practice\Abstracts\bin\Debug\netcoreapp2.0\Abstracts.pdb
+C:\Coding\Practice\Abstracts\obj\Debug\netcoreapp2.0\Abstracts.csproj.CoreCompileInputs.cache
+C:\Coding\Practice\Abstracts\obj\Debug\netcoreapp2.0\Abstracts.AssemblyInfoInputs.cache
+C:\Coding\Practice\Abstracts\obj\Debug\netcoreapp2.0\Abstracts.AssemblyInfo.cs
+C:\Coding\Practice\Abstracts\obj\Debug\netcoreapp2.0\Abstracts.dll
+C:\Coding\Practice\Abstracts\obj\Debug\netcoreapp2.0\Abstracts.pdb
