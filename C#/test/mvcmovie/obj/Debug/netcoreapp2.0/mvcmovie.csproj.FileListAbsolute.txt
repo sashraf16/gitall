@@ -1,0 +1,11 @@
+C:\Gitall\C#\test\mvcmovie\bin\Debug\netcoreapp2.0\mvcmovie.deps.json
+C:\Gitall\C#\test\mvcmovie\bin\Debug\netcoreapp2.0\mvcmovie.runtimeconfig.json
+C:\Gitall\C#\test\mvcmovie\bin\Debug\netcoreapp2.0\mvcmovie.runtimeconfig.dev.json
+C:\Gitall\C#\test\mvcmovie\bin\Debug\netcoreapp2.0\mvcmovie.dll
+C:\Gitall\C#\test\mvcmovie\bin\Debug\netcoreapp2.0\mvcmovie.pdb
+C:\Gitall\C#\test\mvcmovie\obj\Debug\netcoreapp2.0\mvcmovie.csprojResolveAssemblyReference.cache
+C:\Gitall\C#\test\mvcmovie\obj\Debug\netcoreapp2.0\mvcmovie.csproj.CoreCompileInputs.cache
+C:\Gitall\C#\test\mvcmovie\obj\Debug\netcoreapp2.0\mvcmovie.AssemblyInfoInputs.cache
+C:\Gitall\C#\test\mvcmovie\obj\Debug\netcoreapp2.0\mvcmovie.AssemblyInfo.cs
+C:\Gitall\C#\test\mvcmovie\obj\Debug\netcoreapp2.0\mvcmovie.dll
+C:\Gitall\C#\test\mvcmovie\obj\Debug\netcoreapp2.0\mvcmovie.pdb
