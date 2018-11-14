@@ -1,0 +1,11 @@
+D:\Git\fullstack\asp.net\bin\Debug\netcoreapp2.0\asp.net.deps.json
+D:\Git\fullstack\asp.net\bin\Debug\netcoreapp2.0\asp.net.runtimeconfig.json
+D:\Git\fullstack\asp.net\bin\Debug\netcoreapp2.0\asp.net.runtimeconfig.dev.json
+D:\Git\fullstack\asp.net\bin\Debug\netcoreapp2.0\asp.net.dll
+D:\Git\fullstack\asp.net\bin\Debug\netcoreapp2.0\asp.net.pdb
+D:\Git\fullstack\asp.net\obj\Debug\netcoreapp2.0\asp.net.csprojResolveAssemblyReference.cache
+D:\Git\fullstack\asp.net\obj\Debug\netcoreapp2.0\asp.net.csproj.CoreCompileInputs.cache
+D:\Git\fullstack\asp.net\obj\Debug\netcoreapp2.0\asp.net.AssemblyInfoInputs.cache
+D:\Git\fullstack\asp.net\obj\Debug\netcoreapp2.0\asp.net.AssemblyInfo.cs
+D:\Git\fullstack\asp.net\obj\Debug\netcoreapp2.0\asp.net.dll
+D:\Git\fullstack\asp.net\obj\Debug\netcoreapp2.0\asp.net.pdb

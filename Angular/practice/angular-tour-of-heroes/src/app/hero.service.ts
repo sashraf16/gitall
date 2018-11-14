@@ -4,6 +4,7 @@ import { HEROES } from './mock-heroes';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { MessageService } from './message.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 
@@ -22,6 +23,7 @@ export class HeroService {
     return of(HEROES.find(hero => hero.id === id));
   }
 
-  constructor(public messageService: MessageService) { }
+  constructor(private http: HttpClient,
+    private messageService: MessageService) { }
 
 }

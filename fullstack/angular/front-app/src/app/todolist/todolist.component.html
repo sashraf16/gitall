@@ -1,0 +1,17 @@
+<p>
+  todolist works!
+</p>
+
+<input [(ngModel)] = "holder" placeholder="new task">
+<button (click)=addItem()> submit </button>
+
+<h3>apilist</h3>
+<li *ngFor="let item of apilist">
+  <span> {{item}} </span>
+</li>
+
+
+<h3>list</h3>
+<li *ngFor="let item of list">
+  <span> {{item}} </span>
+</li>
