@@ -12,12 +12,17 @@ export class TodolistService {
 
   constructor(private _httpService: HttpClient) { }
 
-  apilist: string[] = [];
+  apilist: any;
 
   getList() {
     // this._httpService.get('http://localhost:5000/api/values').subscribe(values => {this.apilist = values.json() as string[];
     // return of(this.apilist);
-    return this._httpService.get<string[]>(this.listurl);
+    return this._httpService.get<any>(this.listurl);
+  }
+
+  getTask(taskid) {
+    const newurl = this.listurl + '/' + taskid;
+    return this._httpService.get<any>(newurl);
   }
 }
 

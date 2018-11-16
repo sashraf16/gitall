@@ -8,11 +8,13 @@ import { TodolistComponent } from './todolist/todolist.component';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { TodoformComponent } from './todoform/todoform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodolistComponent
+    TodolistComponent,
+    TodoformComponent
   ],
   imports: [
     BrowserModule,

@@ -13,17 +13,11 @@ import { TodolistService } from './../todolist.service';
 export class TodolistComponent implements OnInit {
 
   list = ['hello', 'test', 'another'];
-  apilist: string[] = [];
-  holder = '';
+  apilist: any;
   constructor(private listservice: TodolistService) { }
 
   ngOnInit() {
     this.getList();
-  }
-
-  addItem() {
-    this.list.push(this.holder);
-    this.holder = '';
   }
 
   getList() {

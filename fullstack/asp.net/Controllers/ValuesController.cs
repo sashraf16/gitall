@@ -4,8 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using asp.net.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace asp.net.Controllers {
     [Route ("api/[controller]")]
@@ -14,60 +14,47 @@ namespace asp.net.Controllers {
 
         // GET api/values
         [HttpGet]
-        public List<string> GetTasks () 
-        { 
-            SqlConnection conn2 = new SqlConnection(ConnectionString);
+        public List<Todo> GetTasks () {
+            using (SqlConnection conn = new SqlConnection (ConnectionString)) {
+                conn.Open ();
 
-            try 
-            {
-                conn2.Open();
-            }
+                SqlCommand getall = new SqlCommand ("Select * from tasks", conn);
 
-            catch (Exception e)
-            {
-                System.Console.WriteLine(e.ToString());
-            }
-
-            conn2.Close();
-
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
-            {
-                conn.Open();
-
-                SqlCommand getall = new SqlCommand("Select * from tasks", conn);
-
-                SqlDataReader reader = getall.ExecuteReader();
+                SqlDataReader reader = getall.ExecuteReader ();
 
                 // var result = getall.ExecuteNonQuery();
 
                 // List<Todo> todolist = new List<Todo>();
-                List<string> todolist = new List<string>();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        string name = (string) reader["task"];
-                        // Todo task = new Todo();
-                        // task.Id = (int) reader["Id"];
-                        // task.Item = (string) reader["task"];
+                List<Todo> todolist = new List<Todo> ();
+                if (reader.HasRows) {
+                    while (reader.Read ()) {
+                        // string name = (string) reader.GetString(1);
+                        int id = (Int32) reader["Id"];
+                        string name = (string) reader["item"];
+
+                        // int id = (Int16) reader["Id"];
+                        Todo task = new Todo ();
+                        task.Id = id;
+                        task.Item = name;
 
                         // todolist.Add(task);
 
                         // todolist.Add(task.Item);
                         // System.Console.WriteLine(reader.GetString(1));
 
-                        todolist.Add(name);
+                        // System.Console.WriteLine(task.Id);
+                        // System.Console.WriteLine(task.Item);
+
+                        todolist.Add (task);
                     }
                 }
 
                 return todolist;
 
-                
                 // SqlCommand proc = new SqlCommand("getlist", conn);
 
                 // proc.CommandType = CommandType.StoredProcedure;
             }
-            
 
             // var values = _context.Values.ToList();
 
@@ -75,11 +62,32 @@ namespace asp.net.Controllers {
         }
 
         // GET api/values/5
-        // [HttpGet("{id}")]
-        // public IActionResult GetValue (int id) 
-        // {
-        //     var value = _context.Values.FirstOrDefault(x => x.Id == id);
+        [HttpGet ("{id}")]
+        public Todo GetTask (int id) {
+            using (SqlConnection conn = new SqlConnection (ConnectionString)) {
+                conn.Open ();
 
-        //     return Ok(value);
+                Todo task = new Todo ();
+                using (SqlCommand gettask = new SqlCommand ("Select * from tasks where id = @id", conn)) {
+                    gettask.Parameters.Add (new SqlParameter ("id", id));
+
+                    SqlDataReader reader = gettask.ExecuteReader ();
+
+                    if (reader.HasRows) {
+                        while (reader.Read ()) {
+                            int ids = (Int32) reader["Id"];
+                            string name = (string) reader["item"];
+
+                            task.Id = ids;
+                            task.Item = name;
+
+                            return task;
+                        }
+                    }
+                }
+
+                return task;
+            }
         }
     }
+}
