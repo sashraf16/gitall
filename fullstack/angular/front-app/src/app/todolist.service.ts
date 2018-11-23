@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { Todo } from './todo';
+import { CATCH_ERROR_VAR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,10 @@ export class TodolistService {
   constructor(private _httpService: HttpClient) { }
 
   apilist: any;
+  newTask: Todo = {
+    id: 6,
+    item: 'password'
+  };
 
   getList() {
     // this._httpService.get('http://localhost:5000/api/values').subscribe(values => {this.apilist = values.json() as string[];
@@ -23,6 +29,10 @@ export class TodolistService {
   getTask(taskid) {
     const newurl = this.listurl + '/' + taskid;
     return this._httpService.get<any>(newurl);
+  }
+
+  insertTask(newTask) {
+    return this._httpService.post<Todo>(this.listurl, newTask);
   }
 }
 

@@ -13,6 +13,7 @@ export class TodoformComponent implements OnInit {
 
   model: any;
   newmodel: any;
+  newTask: Todo;
 
   constructor(private listservice: TodolistService) { }
 
@@ -20,8 +21,13 @@ export class TodoformComponent implements OnInit {
     this.listservice.getTask(taskId).subscribe(task => console.log(task));
   }
 
+  insertTask(newTask) {
+    this.listservice.insertTask(newTask).subscribe(task => console.log(task));
+  }
+
   ngOnInit() {
     this.getTask(3);
+    this.insertTask(this.newTask);
 
     // console.log(this.model);
     // this.newmodel = new Todo(this.model.id, this.model.name);
