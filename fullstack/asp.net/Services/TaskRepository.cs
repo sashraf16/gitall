@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using asp.net.Models;
 using asp.net.Services;
 using Microsoft.AspNetCore.Mvc;
+using Dapper;
 
 namespace asp.net.Services {
     public class TaskRepository : ITaskRepository {
