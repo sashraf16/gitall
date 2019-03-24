@@ -37,10 +37,11 @@ namespace fullstack2.Controllers
 
         // GET api/users/verify/password
         // [HttpGet("{pass}")]
-        [Route("verify/{pass}")]
-        public User verify(string pass)
+        [HttpPost]
+        [Route("verify")]
+        public bool verify([FromBody]User user)
         {
-            return _uRepo.verifyUser(pass);
+            return _uRepo.verifyUser(user, "password");
         }
 
         // POST api/users

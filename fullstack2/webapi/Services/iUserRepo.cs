@@ -12,7 +12,7 @@ namespace webapi.Services
         string HashPassword(string password);
 
 
-        User verifyUser(string password);
+        bool verifyUser(User user, string password);
         string getPass(string Username);
 
 
