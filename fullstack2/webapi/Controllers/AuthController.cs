@@ -15,6 +15,8 @@ namespace fullstack2.Controllers
         [Route("login")]
         public User Login ([FromBody]AttemptUser user)
         {
+            var userdb = _uRepo.Login(user);
+
             return _uRepo.Login(user);
         }
     }
