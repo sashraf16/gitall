@@ -1,0 +1,54 @@
+<!-- <div>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+      <ul>
+        <button mat-button>hello</button>
+      </ul>
+      <ul>
+        <button mat-button>about us</button>
+      </ul>
+      <ul>
+        <button mat-button>projects</button>
+      </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>Main content</mat-sidenav-content>
+  </mat-sidenav-container>
+</div> -->
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <h2>app toolbar title translate</h2>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <h2 matSubheader>my work translate</h2>
+
+      <a
+        *ngFor="let item of testlist"
+        mat-list-item
+        (click)="sidenav.close()"
+        [routerLink]="[item.route]"
+        routerLinkActive="list-item-active"
+      >
+        <mat-icon matListIcon> item icon </mat-icon>
+        item title
+      </a>
+
+      <mat-divider></mat-divider>
+
+      ...
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- <crm-navigation-bar
+      *ngIf="isAuthenticated()"
+      (toggleSidenav)="sidenav.toggle()"
+    >
+    </crm-navigation-bar> -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
