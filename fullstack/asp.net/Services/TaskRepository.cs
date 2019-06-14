@@ -12,10 +12,37 @@ namespace asp.net.Services {
     public class TaskRepository : ITaskRepository {
         private const string ConnectionString = @"Server=localhost\SQLEXPRESS;Database=practice database;Trusted_Connection=True";
 
+        public IEnumerable<ToDo> GetAllTasks () {
+
+            var allTasks = new List<Todo> ();
+
+            using (var connection = new SqlConnection (ConnectionString)) {
+                connection.Open ();
+
+                allTasks = connection.Query<Todo> ("prTasks_qryAllTasks",
+                    commandType : CommandType.StoredProcedure
+                );
+
+            }
+
+            return allTasks;
+        }
+
+        public void Add (Todo task) {
+
+            using (var connection = new SqlConnection (ConnectionString)) {
+                connection.Open ();
+
+                connection.Execute ("prTasks_insTask",
+                    new { Name = task.Name } commandType : CommandType.StoredProcedure
+                );
+
+            }
+        }
+
         public List<Todo> GetTasks () {
             using (SqlConnection conn = new SqlConnection (ConnectionString)) {
                 conn.Open ();
-
                 SqlCommand getall = new SqlCommand ("Select * from tasks", conn);
 
                 SqlDataReader reader = getall.ExecuteReader ();
@@ -81,8 +108,7 @@ namespace asp.net.Services {
             }
         }
 
-        public bool InsertTask(Todo newTask)
-        {
+        public bool InsertTask (Todo newTask) {
             using (SqlConnection conn = new SqlConnection (ConnectionString)) {
                 conn.Open ();
 
@@ -91,17 +117,13 @@ namespace asp.net.Services {
                     insertTask.Parameters.Add (new SqlParameter ("id", newTask.Id));
                     insertTask.Parameters.Add (new SqlParameter ("item", newTask.Item));
 
-                    var rows = Convert.ToInt32(insertTask.ExecuteNonQuery());
+                    var rows = Convert.ToInt32 (insertTask.ExecuteNonQuery ());
 
-                    if (rows == 1) 
-                    {
+                    if (rows == 1) {
                         return true;
-                    }
-                    else 
-                    {
+                    } else {
                         return false;
                     }
-
 
                     // SqlDataReader reader = gettask.ExecuteReader ();
 

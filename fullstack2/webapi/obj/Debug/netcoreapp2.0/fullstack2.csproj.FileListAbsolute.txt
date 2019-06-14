@@ -1,0 +1,11 @@
+D:\Git\fullstack2\webapi\bin\Debug\netcoreapp2.0\fullstack2.deps.json
+D:\Git\fullstack2\webapi\bin\Debug\netcoreapp2.0\fullstack2.runtimeconfig.json
+D:\Git\fullstack2\webapi\bin\Debug\netcoreapp2.0\fullstack2.runtimeconfig.dev.json
+D:\Git\fullstack2\webapi\bin\Debug\netcoreapp2.0\fullstack2.dll
+D:\Git\fullstack2\webapi\bin\Debug\netcoreapp2.0\fullstack2.pdb
+D:\Git\fullstack2\webapi\obj\Debug\netcoreapp2.0\fullstack2.csprojResolveAssemblyReference.cache
+D:\Git\fullstack2\webapi\obj\Debug\netcoreapp2.0\fullstack2.csproj.CoreCompileInputs.cache
+D:\Git\fullstack2\webapi\obj\Debug\netcoreapp2.0\fullstack2.AssemblyInfoInputs.cache
+D:\Git\fullstack2\webapi\obj\Debug\netcoreapp2.0\fullstack2.AssemblyInfo.cs
+D:\Git\fullstack2\webapi\obj\Debug\netcoreapp2.0\fullstack2.dll
+D:\Git\fullstack2\webapi\obj\Debug\netcoreapp2.0\fullstack2.pdb
